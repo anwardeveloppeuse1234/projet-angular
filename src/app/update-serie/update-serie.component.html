@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+       <h2>modifier  un Serie :</h2>
+    </div>
+    <form >
+        <div  class="col-sm-2 col-md-2 col-lg-2">
+           <label >ID Serie</label>
+             <input readonly type="text" [(ngModel)]="currentSerie.idSerie"name="idSerie" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+           <label >Nom Serie</label>
+              <input type="text"[(ngModel)]= "currentSerie.nomSerie"name="nomSerie" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+           <label >Prix Serie</label>
+              <input type="number" [(ngModel)]= "currentSerie.prixSerie"name="prixSerie" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+           <label >Date création</label>
+           <input type="date" [ngModel]="currentSerie.dateCreation | date: 'yyyy-MM-dd'"
+           (ngModelChange)=" currentSerie.dateCreation= $event" name="dateCreation"
+            class="form-control">
+        </div>
+         <div class="col-sm-4 col-md-4 col-lg-4">
+            <select class="form-control form-control-lg" id="idGen" name="idGen"
+            [(ngModel)]="updatedGenId">
+               <option *ngFor="let gen of genres" [value]="gen.idGen" >
+                   {{gen.nomGen}}
+               </option>
+            </select>
+        </div> 
+        <div class="mt-2">
+            <button type="submit" (click)="updateSerie()"class="btn btn-success">Modifier</button>
+        
+           
+        </div>
+    </form>
+</div>
