@@ -24,7 +24,7 @@ Series
 <a class="dropdown-item" href="#">Lister</a>
 <a class="dropdown-item" routerLink="/rechercheParGenre" >Recherche ParGenre</a>
 <a class="dropdown-item" routerLink="/rechercheParNom" >Recherche Par Nom</a>
-<a class="dropdown-item" routerLink="/listeGenres" >Gestion des genres</a>
+<a *ngIf="authService.isAdmin()"class="dropdown-item" routerLink="/listeGenres" >Gestion des genres</a>
 </div>
 </li>
 </ul>

@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Genre } from '../model/genre.model';
 import { SerieService } from '../services/serie.service';
@@ -5,9 +6,7 @@ import { UpdateGenreComponent } from '../update-genre/update-genre.component';
 
 @Component({
   selector: 'app-liste-genres',
-  templateUrl: './liste-genres.component.html',
-  styles: [
-  ]
+  templateUrl: './liste-genres.component.html'
 })
 export class ListeGenresComponent implements OnInit {
   genres! : Genre[];
@@ -15,7 +14,9 @@ export class ListeGenresComponent implements OnInit {
   ajout:boolean=true;
 
 
-  constructor(private serieService : SerieService) { }
+
+
+  constructor(private serieService : SerieService , public authService :AuthService) { }
 
   ngOnInit(): void {this.serieService.listeGenres().
     subscribe(gens => {this.genres = gens._embedded.genres;

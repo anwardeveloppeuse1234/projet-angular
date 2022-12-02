@@ -20,7 +20,7 @@ const routes: Routes = [{path: "series", component : SeriesComponent},
 {path: "listeGenres", component : ListeGenresComponent},
 {path: 'login', component: LoginComponent},
 {path: 'app-forbidden', component: ForbiddenComponent},
-{path: "updateSerie/:id", component: UpdateSerieComponent}];
+{path: "updateSerie/:id", component: UpdateSerieComponent,canActivate:[SerieGuard]}];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Serie } from '../model/serie.model';
 
@@ -15,7 +16,7 @@ nomSerie!:string ;
 series!:Serie[];
 allSeries! : Serie[];
 searchTerm!: string;
-  constructor(private serieService :SerieService  ) { }
+  constructor(private serieService :SerieService, public authService:AuthService  ) { }
 
   ngOnInit(): void {this.serieService.listeSerie().subscribe(sers => {
     console.log(sers);

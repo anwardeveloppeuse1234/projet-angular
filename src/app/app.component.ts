@@ -13,7 +13,12 @@ export class AppComponent  implements OnInit{
     ngOnInit () {
       this.authService.loadToken();
 if (this.authService.getToken()==null || this.authService.isTokenExpired())
-  this.router.navigate(['/login']);
+  {this.router.navigate(['/login']);
+  this.authService.isloggedIn=false;
+    }
+    else{
+      this.authService.isloggedIn=true;
+    }
   //this.router.navigate(["series"])
 
     }

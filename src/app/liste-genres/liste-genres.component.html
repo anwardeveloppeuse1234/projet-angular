@@ -16,9 +16,8 @@
               <tr>
                  <td>{{gen.idGen}}</td>
                  <td>{{gen.nomGen}}</td>
-                 <td><a  class="btn btn-danger" (click)="supprimerGenre(gen)">Supprimer</a></td>
-
-                 <td><a class="btn btn-success" (click)="updateGen(gen)">Editer</a></td>
+                 <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimerGenre(gen)">Supprimer</a></td>
+                 <td><a *ngIf="authService.isAdmin()" class="btn btn-success" (click)="updateGen(gen)">Modifier</a></td>
               </tr>
             </tbody>
           </table>

@@ -80,7 +80,9 @@ export class AuthService {
   } */
 
   isAdmin(): Boolean {
+    console.log(this.roles);
     if (!this.roles)
+
       return false;
     return this.roles.indexOf('ADMIN') >=0;
 
